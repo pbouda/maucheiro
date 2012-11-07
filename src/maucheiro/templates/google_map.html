@@ -1,0 +1,14 @@
+{# google_map.html #}
+{% extends "floppyforms/gis/openlayers.html" %}
+
+{% block options %}
+{{ block.super }}
+options['base_layer'] = new OpenLayers.Layer.Google("Google Streets",
+                                                    {numZoomLevels: 20,
+                                                     units: 'm'});
+options['point_zoom'] = 14;
+options['default_zoom'] = 14; 
+options['default_lon'] = -8.665316; 
+options['default_lat'] = 39.460503; 
+
+{% endblock %}
